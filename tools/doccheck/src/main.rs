@@ -10,6 +10,10 @@
 //!    "Pre-site plan" heading and a "Backout" heading.
 //! 4. Every document is linked from SUMMARY.md.
 //! 5. No term from the local, untracked `.doccheck-banned.txt` appears in docs/.
+//! 6. Every alias (doc_type alias) names its source in `alias_of:` (a path
+//!    relative to docs/), the source exists and is not itself an alias, both
+//!    carry the same status, and the alias body links to the source. Aliases
+//!    keep published links alive when a document lives at a different path.
 
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -47,12 +51,58 @@ fn placeholders(text: &str) -> Vec<String> {
     found
 }
 
-fn doc_type(text: &str) -> Option<&str> {
+/// Value of a frontmatter field, trimmed.
+fn field<'a>(text: &'a str, key: &str) -> Option<&'a str> {
     text.lines()
         .skip(1)
         .take_while(|l| l.trim() != "---")
-        .find_map(|l| l.strip_prefix("doc_type:"))
+        .find_map(|l| l.strip_prefix(key)?.strip_prefix(':'))
         .map(str::trim)
+}
+
+fn doc_type(text: &str) -> Option<&str> {
+    field(text, "doc_type")
+}
+
+/// Link from the document at `from` to the document at `to`, both relative
+/// to the docs root with forward slashes.
+fn relative_link(from: &str, to: &str) -> String {
+    let depth = from.matches('/').count();
+    format!("{}{to}", "../".repeat(depth))
+}
+
+/// Problems with aliases. `docs` holds (relative path, file name, text).
+fn alias_problems(docs: &[(String, String, String)]) -> Vec<String> {
+    let find = |rel: &str| docs.iter().find(|(r, _, _)| r == rel);
+    let mut out = Vec::new();
+    for (rel, _, text) in docs {
+        let target = field(text, "alias_of");
+        if doc_type(text) != Some("alias") {
+            if target.is_some() {
+                out.push(format!("{rel}: has alias_of but doc_type is not alias"));
+            }
+            continue;
+        }
+        let Some(target) = target.filter(|t| !t.is_empty()) else {
+            out.push(format!("{rel}: alias has no alias_of"));
+            continue;
+        };
+        let Some((_, _, source)) = find(target) else {
+            out.push(format!("{rel}: alias_of names a missing document: {target}"));
+            continue;
+        };
+        if doc_type(source) == Some("alias") {
+            out.push(format!("{rel}: alias_of names another alias: {target}"));
+        }
+        if field(source, "status") != field(text, "status") {
+            out.push(format!("{rel}: status differs from its source {target}"));
+        }
+        let link = relative_link(rel, target);
+        if !text.contains(&format!("]({link})")) {
+            out.push(format!("{rel}: alias body does not link to ({link})"));
+        }
+    }
+    out
 }
 
 fn has_heading(text: &str, needle: &str) -> bool {
@@ -182,10 +232,111 @@ file with `doccheck docs --write-verify`. CI fails if a placeholder is missing f
         }
     }
 
+    for p in alias_problems(&docs) {
+        fail(p);
+    }
+
     println!("checked {} files, {errors} problem(s)", docs.len());
     if errors == 0 {
         ExitCode::SUCCESS
     } else {
         ExitCode::FAILURE
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const DRAFT: &str = "status: \"DRAFT — author review pending\"";
+
+    fn doc(rel: &str, front: &str, body: &str) -> (String, String, String) {
+        let name = rel.rsplit('/').next().unwrap_or(rel).to_string();
+        (rel.into(), name, format!("---\n{front}\n---\n\n{body}\n"))
+    }
+
+    fn source() -> (String, String, String) {
+        doc("ist/readiness.md", &format!("title: R\ndoc_type: checklist\n{DRAFT}"), "# R")
+    }
+
+    fn alias(front_extra: &str, body: &str) -> (String, String, String) {
+        doc(
+            "checklists/readiness.md",
+            &format!("title: R\ndoc_type: alias\n{DRAFT}\n{front_extra}"),
+            body,
+        )
+    }
+
+    #[test]
+    fn relative_link_climbs_one_level_per_folder() {
+        assert_eq!(relative_link("a.md", "x/y.md"), "x/y.md");
+        assert_eq!(relative_link("a/b.md", "x/y.md"), "../x/y.md");
+        assert_eq!(relative_link("a/b/c.md", "x/y.md"), "../../x/y.md");
+    }
+
+    #[test]
+    fn field_matches_whole_key_only() {
+        let t = "---\ndoc_type_x: no\ndoc_type: alias\n---\nalias_of: body\n";
+        assert_eq!(field(t, "doc_type"), Some("alias"));
+        assert_eq!(field(t, "alias_of"), None, "body lines are not frontmatter");
+    }
+
+    #[test]
+    fn valid_alias_passes() {
+        let docs = vec![
+            source(),
+            alias("alias_of: ist/readiness.md", "This document lives at [R](../ist/readiness.md)."),
+        ];
+        assert!(alias_problems(&docs).is_empty(), "{:?}", alias_problems(&docs));
+    }
+
+    #[test]
+    fn alias_to_missing_document_fails() {
+        let docs = vec![alias("alias_of: ist/gone.md", "[R](../ist/gone.md)")];
+        let p = alias_problems(&docs);
+        assert!(p[0].contains("missing document"), "{p:?}");
+    }
+
+    #[test]
+    fn alias_without_target_fails() {
+        let p = alias_problems(&[alias("", "nothing")]);
+        assert!(p[0].contains("no alias_of"), "{p:?}");
+    }
+
+    #[test]
+    fn alias_without_link_fails() {
+        let docs = vec![source(), alias("alias_of: ist/readiness.md", "See the IST folder.")];
+        let p = alias_problems(&docs);
+        assert!(p[0].contains("does not link"), "{p:?}");
+    }
+
+    #[test]
+    fn alias_of_alias_fails() {
+        let mut second = alias("alias_of: checklists/readiness.md", "[R](../checklists/readiness.md)");
+        second.0 = "templates/readiness.md".into();
+        let docs = vec![
+            source(),
+            alias("alias_of: ist/readiness.md", "[R](../ist/readiness.md)"),
+            second,
+        ];
+        let p = alias_problems(&docs);
+        assert!(p.iter().any(|m| m.contains("another alias")), "{p:?}");
+    }
+
+    #[test]
+    fn status_mismatch_fails() {
+        let mut src = source();
+        src.2 = src.2.replace("DRAFT — author review pending", "Reviewed");
+        let docs = vec![src, alias("alias_of: ist/readiness.md", "[R](../ist/readiness.md)")];
+        let p = alias_problems(&docs);
+        assert!(p.iter().any(|m| m.contains("status differs")), "{p:?}");
+    }
+
+    #[test]
+    fn alias_of_on_a_normal_document_fails() {
+        let mut src = source();
+        src.2 = src.2.replace("doc_type: checklist", "doc_type: checklist\nalias_of: x.md");
+        let p = alias_problems(&[src]);
+        assert!(p[0].contains("doc_type is not alias"), "{p:?}");
     }
 }
