@@ -70,6 +70,7 @@
 
 - [IST Readiness Checklist](ist/ist-readiness-checklist.md)
 - [IST Plan Outline](ist/integrated-systems-test-plan.md)
+- [IST Script Template](templates/ist-script-template.md)
 - [IST Script: Loss and Return of Utility](ist/ist-script-loss-of-utility.md)
 - [Level 5 Verification Checklist (Owner)](checklists/level-5-verification-checklist.md)
 
