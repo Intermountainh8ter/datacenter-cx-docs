@@ -87,3 +87,14 @@
 - [Post-Event Review](templates/post-event-review.md)
 - [VERIFY Register](VERIFY.md)
 - [Language Register](LANGUAGE-REGISTER.md)
+
+# Stable Link Paths
+
+These short pages exist so that published links keep working. Each one points to the document's home.
+
+- [IST Readiness Checklist (alias)](checklists/ist-readiness-checklist.md)
+- [Utility-Loss Transfer Test Plan (alias)](test-plans/utility-loss-transfer-test-plan.md)
+- [Cx Issues Log Template (alias)](templates/cx-issues-log-template.md)
+- [MOP Template (alias)](templates/mop-template.md)
+- [SOP Template (alias)](templates/sop-template.md)
+- [EOP Template (alias)](templates/eop-template.md)
