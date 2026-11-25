@@ -13,14 +13,14 @@ Open, reusable commissioning, startup, and operations documents for data centers
 | `docs/guides/` | Which document to use, procedure best practices, the pre-site plan template, backout planning, commissioning levels, glossary |
 | `docs/mop/` | Method of Procedure template and examples (UPS bypass, generator load bank, distribution isolation, cooling unit, battery string, transfer switch, chilled water pump, firmware update, fuel polishing) |
 | `docs/sop/` | Standard Operating Procedure template and examples (rounds, generator run, change authorization, shift turnover) |
-| `docs/eop/` | Emergency Operating Procedure template and examples (utility loss, UPS failure, cooling loss, water leak, fire, fuel leak, generator failure, loss of monitoring, severe weather) |
+| `docs/eop/` | Emergency Operating Procedure template and examples (utility loss, UPS failure, cooling loss, water leak, fire, fuel leak, generator failure, loss of monitoring, severe weather, loss of liquid cooling or coolant leak) |
 | `docs/cx-scripts/` | Functional performance test script template and examples (UPS, generator and transfer, cooling unit, monitoring, transfer switches, chilled water plant, fire interfaces, heat-rise test) |
 | `docs/test-plans/` | Functional test plans: generator paralleling, CDU and secondary fluid network, and the utility-loss transfer test (link to the IST script) |
 | `docs/ist/` | Integrated systems test plan, readiness checklist, and a scenario script |
 | `docs/spares/` | Critical spare parts program guide, scoring worksheet, inventory template, audit SOP |
 | `docs/operations/` | Operations program overview, drill schedule and scorecard, training and qualification matrix, vendor emergency contact sheet, maintenance calendar |
 | `docs/DISCLAIMER.md` | The full disclaimer |
-| `docs/checklists/` | Pre-functional checklist, FAT / factory witness test checklist, controls point-to-point checkout (the Level 4 entry gate), owner's Level 5 verification checklist, IST readiness checklist (link) |
+| `docs/checklists/` | Pre-functional checklist, FAT / factory witness test checklist, controls point-to-point checkout (the Level 4 entry gate), owner's Level 5 verification checklist, turnover and handover checklist, IST readiness checklist (link) |
 | `docs/templates/` | Pre-task briefing, Cx issues log (with CMMS-ready fields), post-event review, IST script template, and links to the MOP, SOP, and EOP templates |
 | `docs/one-pagers/` | Quick references |
 | `docs/VERIFY.md` | Every `[VERIFY: ...]` placeholder awaiting a checked standards reference (generated) |
@@ -50,6 +50,12 @@ cargo run --manifest-path tools/doccheck/Cargo.toml -- docs
 - each document is linked from `docs/SUMMARY.md`;
 - each alias page (`doc_type: alias`) names a real document in `alias_of` and links to it;
 - no term from a local, untracked `.doccheck-banned.txt` appears.
+
+The checker has its own tests, which CI runs along with clippy:
+
+```
+cargo test --manifest-path tools/doccheck/Cargo.toml
+```
 
 ## Every procedure has a pre-site plan and a backout
 
