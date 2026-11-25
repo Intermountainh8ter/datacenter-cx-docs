@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cargo run --manifest-path tools/doccheck/Cargo.toml --release -- docs
+      - name: Test and lint the Rust tools
+        run: |
+          cargo test --manifest-path tools/doccheck/Cargo.toml
+          cargo test --manifest-path tools/pdfbuild/Cargo.toml
+          cargo clippy --manifest-path tools/doccheck/Cargo.toml --all-targets -- -D warnings
+          cargo clippy --manifest-path tools/pdfbuild/Cargo.toml --all-targets -- -D warnings
 
   pdf:
     runs-on: ubuntu-latest

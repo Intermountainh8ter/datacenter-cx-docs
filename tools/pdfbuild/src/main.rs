@@ -4,7 +4,9 @@
 //!
 //! Defaults: docs-dir = "docs", out-dir = "pdf". The output mirrors the
 //! folder layout of docs/. Set the TYPST environment variable to the Typst
-//! executable if it is not on PATH. SUMMARY.md (the mdBook index) is skipped.
+//! executable if it is not on PATH. SUMMARY.md (the mdBook index) is skipped,
+//! and so are alias pages (doc_type alias), which only point to a document
+//! that is printed in its own right.
 
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -22,6 +24,14 @@ fn walk(dir: &Path, out: &mut Vec<PathBuf>) {
             out.push(p);
         }
     }
+}
+
+/// True if the frontmatter marks the document as an alias page.
+fn is_alias(text: &str) -> bool {
+    text.lines()
+        .skip(1)
+        .take_while(|l| l.trim() != "---")
+        .any(|l| l.trim() == "doc_type: alias")
 }
 
 fn main() -> ExitCode {
@@ -42,6 +52,9 @@ fn main() -> ExitCode {
     let (mut built, mut failed) = (0, 0);
     for f in &files {
         if f.file_name().is_some_and(|n| n == "SUMMARY.md") {
+            continue;
+        }
+        if is_alias(&fs::read_to_string(f).unwrap_or_default().replace("\r\n", "\n")) {
             continue;
         }
         let rel = f.strip_prefix(&docs).unwrap_or(f);
@@ -78,5 +91,17 @@ fn main() -> ExitCode {
         ExitCode::SUCCESS
     } else {
         ExitCode::FAILURE
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::is_alias;
+
+    #[test]
+    fn alias_pages_are_detected_from_frontmatter_only() {
+        assert!(is_alias("---\ntitle: X\ndoc_type: alias\n---\n\nbody\n"));
+        assert!(!is_alias("---\ntitle: X\ndoc_type: checklist\n---\n\nbody\n"));
+        assert!(!is_alias("---\ntitle: X\n---\n\ndoc_type: alias\n"), "body text is not frontmatter");
     }
 }

@@ -12,6 +12,7 @@ Rust is the preferred language. Anything that is not Rust is recorded here.
 | Item | Language / format | Reason |
 |---|---|---|
 | Documents under `docs/` | Markdown | Documents are prose, not code; Markdown is what mdBook renders. |
+| `tools/doccheck/tests/fixtures/` | Markdown | Test inputs: small docs trees that the `doccheck` tests run the checker against. They must be Markdown because Markdown is what the checker reads. |
 | `.github/workflows/ci.yml` | YAML | Required format for GitHub Actions. |
 | `book.toml` | TOML | mdBook configuration format (mdBook itself is Rust). |
 | `tools/typst/doc.typ` | Typst | Page layout for PDF output. Typst is the typesetting system and has its own markup language; the Typst compiler itself is written in Rust. |
