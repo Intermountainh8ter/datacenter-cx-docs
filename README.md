@@ -15,12 +15,13 @@ Open, reusable commissioning, startup, and operations documents for data centers
 | `docs/sop/` | Standard Operating Procedure template and examples (rounds, generator run, change authorization, shift turnover) |
 | `docs/eop/` | Emergency Operating Procedure template and examples (utility loss, UPS failure, cooling loss, water leak, fire, fuel leak, generator failure, loss of monitoring, severe weather) |
 | `docs/cx-scripts/` | Functional performance test script template and examples (UPS, generator and transfer, cooling unit, monitoring, transfer switches, chilled water plant, fire interfaces, heat-rise test) |
+| `docs/test-plans/` | Functional test plans: generator paralleling, CDU and secondary fluid network, and the utility-loss transfer test (link to the IST script) |
 | `docs/ist/` | Integrated systems test plan, readiness checklist, and a scenario script |
 | `docs/spares/` | Critical spare parts program guide, scoring worksheet, inventory template, audit SOP |
 | `docs/operations/` | Operations program overview, drill schedule and scorecard, training and qualification matrix, vendor emergency contact sheet, maintenance calendar |
 | `docs/DISCLAIMER.md` | The full disclaimer |
-| `docs/checklists/` | Pre-functional checklist |
-| `docs/templates/` | Pre-task briefing, issues log, post-event review |
+| `docs/checklists/` | Pre-functional checklist, FAT / factory witness test checklist, controls point-to-point checkout (the Level 4 entry gate), owner's Level 5 verification checklist, IST readiness checklist (link) |
+| `docs/templates/` | Pre-task briefing, Cx issues log (with CMMS-ready fields), post-event review, IST script template, and links to the MOP, SOP, and EOP templates |
 | `docs/one-pagers/` | Quick references |
 | `docs/VERIFY.md` | Every `[VERIFY: ...]` placeholder awaiting a checked standards reference (generated) |
 | `docs/LANGUAGE-REGISTER.md` | Anything in the repo that is not Rust, and why |
@@ -47,6 +48,7 @@ cargo run --manifest-path tools/doccheck/Cargo.toml -- docs
 - each procedure (`mop`, `sop`, `eop`, `cx-script`, `ist`) has a **Pre-site plan** heading and a **Backout** heading;
 - each `[VERIFY: ...]` placeholder is listed in `docs/VERIFY.md` (regenerate it with `-- docs --write-verify`);
 - each document is linked from `docs/SUMMARY.md`;
+- each alias page (`doc_type: alias`) names a real document in `alias_of` and links to it;
 - no term from a local, untracked `.doccheck-banned.txt` appears.
 
 ## Every procedure has a pre-site plan and a backout
@@ -64,6 +66,16 @@ cargo run --manifest-path tools/pdfbuild/Cargo.toml -- docs pdf
 ```
 
 This needs [Typst](https://typst.app) on your PATH, or the `TYPST` environment variable set to the Typst executable. The first build downloads the `cmarker` Typst package. Output goes to `pdf/`, which is not tracked in git. CI builds the same PDFs on every push and attaches them to the workflow run as the `draft-pdfs` artifact. They are drafts, not a release.
+
+## Stable links
+
+Some documents are linked from elsewhere at a path other than the folder where they live. Rather than move them and break older links, the repository keeps a short alias page at the published path that points to the document's home (for example, `docs/checklists/ist-readiness-checklist.md` points to `docs/ist/ist-readiness-checklist.md`). They are listed under "Stable Link Paths" in `docs/SUMMARY.md`, and `doccheck` fails if an alias points at a document that no longer exists.
+
+## About the author
+
+Written and maintained by Ammon D. Jackson. Connect on [LinkedIn](https://www.linkedin.com/in/ammon-jackson-79421878).
+
+Available for data center commissioning work in Utah, Arizona, and Nevada (UT / AZ / NV).
 
 ## Licensing
 
