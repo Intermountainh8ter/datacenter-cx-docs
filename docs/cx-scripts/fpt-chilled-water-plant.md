@@ -44,7 +44,7 @@ Facility not live. Risks: equipment damage from running without flow, freezing a
 - [ ] Test load applied and stable
 
 ## 6. Safety
-Rotating equipment, refrigerant, electrical, hot and cold surfaces, water treatment chemicals. Chiller vendor present for chiller failure tests.
+Rotating equipment, refrigerant, electrical, hot and cold surfaces, water treatment chemicals. Chiller vendor present for chiller failure tests. Electrical boundaries and PPE for work in starters, drives, and control panels: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit].
 
 ## 7. Test equipment
 

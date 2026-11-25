@@ -20,6 +20,8 @@ Every `[VERIFY: ...]` placeholder in `docs/` is listed here against the file tha
 | checklists/pre-functional-checklist.md | `[VERIFY: NETA ATS applicable section]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: NFPA 70E labeling section]` |
 | cx-scripts/cx-script-template.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
+| cx-scripts/fpt-chilled-water-plant.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
+| cx-scripts/fpt-cooling-unit.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
 | cx-scripts/fpt-cooling-unit.md | `[VERIFY: ASHRAE thermal guidelines section for allowable ranges]` |
 | cx-scripts/fpt-fire-alarm-interfaces.md | `[VERIFY: NFPA 72 sections on acceptance testing]` |
 | cx-scripts/fpt-generator-and-transfer.md | `[VERIFY: NFPA 110 acceptance test section]` |

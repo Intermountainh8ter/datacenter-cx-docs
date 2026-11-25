@@ -41,7 +41,7 @@ Facility not live. If heat load banks are used, an uncontrolled temperature rise
 - [ ] Units in automatic, no alarms; room closed up as in normal operation
 
 ## 6. Safety
-Rotating fans, electrical panels, hot load banks, open floor tiles.
+Rotating fans, electrical panels, hot load banks, open floor tiles. Electrical boundaries and PPE for work in unit panels: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit].
 
 ## 7. Test equipment
 
