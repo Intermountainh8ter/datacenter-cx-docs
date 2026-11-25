@@ -7,7 +7,7 @@ license: CC BY 4.0
 
 # IST Script: Loss and Return of Utility at Design Load
 
-> Example scenario script for a generic facility on load banks with no production load. Replace device names, delays, and limits with the approved sequence of operations.
+> Example scenario script for a generic facility on load banks with no production load, written from the [IST Script Template](../templates/ist-script-template.md). Replace device names, delays, and limits with the approved sequence of operations.
 
 ## 1. Document control
 
@@ -42,7 +42,17 @@ A failed transfer drops the load banks, not production load. Hazards: switching,
 ## 6. Safety
 Controlled access to electrical rooms and generator areas. Hearing protection. Only the named operator performs switching.
 
-## 7. Test steps
+## 7. Test equipment
+
+| Instrument | ID | Calibration due | Location / system recorded |
+|---|---|---|---|
+| Power quality recorder (critical bus) | | | |
+| Power quality recorder (utility or generator bus) | | | |
+| Temperature loggers in the data hall | | | |
+| Load banks with remote shut-off | | | |
+| Event recorder or synchronized clocks for each recorder | | | |
+
+## 8. Test steps
 
 | # | Action | Expected response | Observed / time | Pass/Fail |
 |---|---|---|---|---|
@@ -64,10 +74,20 @@ Controlled access to electrical rooms and generator areas. Hearing protection. O
 | 14 | Verify alarms and events at monitoring match what happened, in order | Complete and correctly timed | | |
 | 15 | Record as-left and compare with step 1 | Normal lineup | | |
 
-## 8. Acceptance criteria
+Rules: record what was observed, with the time, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID; the scenario is rerun in full after the root cause is found and corrected and any affected functional test is repeated.
+
+## 9. Acceptance criteria
 From the sequence of operations and design basis. [VERIFY: NFPA 110 acceptance test section]
 
-## 9. Backout procedure
+| Criterion | Value | Source document and section |
+|---|---|---|
+| UPS output disturbance on loss of utility | | |
+| Time from loss of utility to generators ready and load transferred | | |
+| Cooling restart time and peak hall temperature | | |
+| Retransfer delay and disturbance on return of utility | | |
+| Alarm and event sequence at monitoring | | |
+
+## 10. Backout procedure
 **Triggers:** generators do not start or transfer before the UPS low-battery warning; cooling does not restart and the hall reaches the agreed limit; any equipment fault; unsafe condition.
 
 | If stopped during steps | Backout steps | End state |
@@ -78,7 +98,7 @@ From the sequence of operations and design basis. [VERIFY: NFPA 110 acceptance t
 
 After any backout: record the state, log the issue, and do not rerun until the cause is corrected and the affected functional test is repeated.
 
-## 10. Restoration and sign-off
+## 11. Restoration and sign-off
 - [ ] Normal lineup; batteries recharging; fuel level recorded
 - [ ] Data collected from all recorders and instruments
 - [ ] Issues logged

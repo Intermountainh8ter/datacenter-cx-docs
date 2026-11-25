@@ -18,7 +18,7 @@ IST deliberately creates failures. State the protections: no production load, lo
 ## 3. Pre-site plan
 - [ ] All functional performance tests passed; open issues accepted in writing (see the readiness checklist)
 - [ ] Scenario list and order agreed with the owner and design engineer
-- [ ] A script written for each scenario, each with its own backout
+- [ ] A script written for each scenario, each with its own backout (see the [IST Script Template](../templates/ist-script-template.md))
 - [ ] Load bank plan: quantity, placement by cabinet or zone, power connections, and control (remote shut-off)
 - [ ] Trend logging and power quality recording set up; time synchronized across systems
 - [ ] Fuel and water quantities for the full test program
@@ -69,4 +69,4 @@ Timestamps for each event, electrical and thermal trends, alarm logs, and observ
 | Resume | Only after the cause is corrected, the affected functional test is repeated, and a new go/no-go is recorded | Program restarts at the failed scenario |
 
 ## 9. Deficiency handling and closeout
-Log each issue in the Cx issues log with a scenario reference; retest the full scenario after correction. Final report: results per scenario, trends, open items, and the operations baseline (time-to-limit, start times, transfer times).
+Log each issue in the [Cx Issues Log](../templates/issues-log.md) with a scenario reference; retest the full scenario after the root cause is found and corrected. Final report: results per scenario, trends, open items, and the operations baseline (time-to-limit, start times, transfer times). The owner verifies delivery with the [Level 5 Verification Checklist](../checklists/level-5-verification-checklist.md) before accepting the report.

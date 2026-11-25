@@ -7,7 +7,7 @@ license: CC BY 4.0
 
 # Cx Functional Performance Test (FPT) Script Template
 
-> Template. A script tests the installed system against the approved sequence of operations and design documents. Acceptance values come from those documents and the governing standards, never from this template.
+> Template. A script tests the installed system against the approved sequence of operations and design documents. Acceptance values come from those documents and the governing standards, never from this template. A script starts only after the system's [controls point-to-point checkout](../checklists/controls-point-to-point-checkout.md) is accepted (the Level 4 entry gate).
 
 ## 1. Document control
 
@@ -62,6 +62,10 @@ Rules: record what was observed, not "OK". A failed step is logged in the issues
 
 ## 9. Acceptance criteria
 List each criterion with its source document and section.
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| | | |
 
 ## 10. Backout procedure
 **Triggers:** unsafe condition; equipment damage risk; response that could affect systems outside the test; loss of a prerequisite.

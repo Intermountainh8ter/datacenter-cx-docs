@@ -15,6 +15,16 @@ license: CC BY 4.0
 | Cx script | Functional performance test script | A system must be proven against its design intent and sequence of operations before turnover | During commissioning, per system | Completed pre-functional checklists |
 | IST script | Integrated systems test script | Multiple systems must be proven working together under load and under failure | Late commissioning, per scenario | All individual system tests passed |
 
+## Other document types in this repository
+
+| Type | Use it when | Examples |
+|---|---|---|
+| Checklist | Conditions must be confirmed, with evidence, before a gate or decision; nothing is operated | [Pre-functional](../checklists/pre-functional-checklist.md), [FAT / FWT witness](../checklists/fat-fwt-witness-checklist.md), [controls point-to-point](../checklists/controls-point-to-point-checkout.md), [IST readiness](../ist/ist-readiness-checklist.md), [Level 5 verification](../checklists/level-5-verification-checklist.md), [turnover and handover](../checklists/turnover-handover-checklist.md) |
+| Test plan | A functional test covers a system large enough to need its own plan; same sections and rules as a Cx script | [Generator paralleling](../test-plans/generator-paralleling-test-plan.md), [CDU and secondary fluid network](../test-plans/cdu-liquid-loop-functional-test-plan.md) |
+| Template and register | Information is recorded in a fixed structure | [Cx issues log](../templates/issues-log.md), [pre-task briefing](../templates/pre-task-briefing.md), [post-event review](../templates/post-event-review.md), spares and operations registers |
+| Guide and one-pager | Explains how to choose, write, or run the documents above | This page, [Commissioning Levels](commissioning-levels.md), [Backout Planning](backout-planning.md) |
+| Alias page | A published link points to a path where the document does not live; the alias points to its home | Listed under "Stable Link Paths" in the book's contents |
+
 ## How they relate
 
 - Commissioning scripts and IST prove the facility does what the design says. Their results become the baseline for operations.
@@ -36,4 +46,4 @@ license: CC BY 4.0
 
 ## Suggested numbering
 
-`<TYPE>-<SYSTEM>-<NNN>-R<rev>`, for example `MOP-UPS-003-R2`. Keep the system codes in one controlled list (ELEC, UPS, GEN, MECH, BMS, FIRE, SEC).
+`<TYPE>-<SYSTEM>-<NNN>-R<rev>`, for example `MOP-UPS-003-R2`. Keep the system codes in one controlled list (ELEC, UPS, GEN, MECH, LIQ for liquid cooling, BMS, FIRE, SEC).
