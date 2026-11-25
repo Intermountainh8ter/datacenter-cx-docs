@@ -9,10 +9,10 @@ Open, reusable commissioning, startup, and operations documents for data centers
 | Path | Contents |
 |---|---|
 | `docs/guides/` | Which document to use, procedure best practices, the pre-site plan template, backout planning, commissioning levels, glossary |
-| `docs/mop/` | Method of Procedure template and examples (UPS bypass, generator load bank, distribution isolation, cooling unit) |
+| `docs/mop/` | Method of Procedure template and examples (UPS bypass, generator load bank, distribution isolation, cooling unit, battery string, transfer switch, chilled water pump, firmware update, fuel polishing) |
 | `docs/sop/` | Standard Operating Procedure template and examples (rounds, generator run, change authorization, shift turnover) |
-| `docs/eop/` | Emergency Operating Procedure template and examples (utility loss, UPS failure, cooling loss, water leak) |
-| `docs/cx-scripts/` | Functional performance test script template and examples (UPS, generator and transfer, cooling unit, monitoring) |
+| `docs/eop/` | Emergency Operating Procedure template and examples (utility loss, UPS failure, cooling loss, water leak, fire, fuel leak, generator failure, loss of monitoring, severe weather) |
+| `docs/cx-scripts/` | Functional performance test script template and examples (UPS, generator and transfer, cooling unit, monitoring, transfer switches, chilled water plant, fire interfaces, heat-rise test) |
 | `docs/ist/` | Integrated systems test plan, readiness checklist, and a scenario script |
 | `docs/spares/` | Critical spare parts program guide, scoring worksheet, inventory template, audit SOP |
 | `docs/checklists/` | Pre-functional checklist |

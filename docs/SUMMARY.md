@@ -17,6 +17,11 @@
 - [Generator Load Bank Test](mop/mop-generator-load-bank-test.md)
 - [Isolate One Distribution Path](mop/mop-switchboard-isolation.md)
 - [Cooling Unit Out of Service](mop/mop-cooling-unit-maintenance.md)
+- [Replace One UPS Battery String](mop/mop-battery-string-replacement.md)
+- [Transfer Switch Maintenance](mop/mop-transfer-switch-maintenance.md)
+- [Replace One Chilled Water Pump](mop/mop-chilled-water-pump-replacement.md)
+- [Firmware or Controller Software Update](mop/mop-firmware-update.md)
+- [Fuel Polishing and Tank Sampling](mop/mop-fuel-polishing.md)
 
 # SOP: Standard Operating Procedures
 
@@ -33,6 +38,11 @@
 - [UPS on Battery or UPS Failure](eop/eop-ups-failure.md)
 - [Loss of Cooling](eop/eop-loss-of-cooling.md)
 - [Water Leak in a Critical Space](eop/eop-water-leak.md)
+- [Fire Alarm or Suppression Discharge](eop/eop-fire-alarm-or-suppression-discharge.md)
+- [Fuel Leak or Spill](eop/eop-fuel-leak.md)
+- [Generator Failure While on Generator](eop/eop-generator-failure-on-generator.md)
+- [Loss of Monitoring System](eop/eop-loss-of-monitoring.md)
+- [Severe Weather](eop/eop-severe-weather.md)
 
 # Commissioning Scripts
 
@@ -42,6 +52,10 @@
 - [Generator and Transfer Functional Performance Test](cx-scripts/fpt-generator-and-transfer.md)
 - [Cooling Unit Functional Performance Test](cx-scripts/fpt-cooling-unit.md)
 - [Monitoring Points and Alarms](cx-scripts/fpt-monitoring-points-and-alarms.md)
+- [Automatic and Static Transfer Switches](cx-scripts/fpt-transfer-switches.md)
+- [Chilled Water Plant](cx-scripts/fpt-chilled-water-plant.md)
+- [Fire Alarm and Suppression Interfaces](cx-scripts/fpt-fire-alarm-interfaces.md)
+- [Data Hall Heat-Rise Test](cx-scripts/fpt-heat-rise-test.md)
 
 # IST: Integrated Systems Testing
 
