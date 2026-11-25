@@ -39,6 +39,7 @@
 - [Loss of Utility Power](eop/eop-loss-of-utility.md)
 - [UPS on Battery or UPS Failure](eop/eop-ups-failure.md)
 - [Loss of Cooling](eop/eop-loss-of-cooling.md)
+- [Loss of Liquid Cooling or Coolant Leak](eop/eop-loss-of-liquid-cooling.md)
 - [Water Leak in a Critical Space](eop/eop-water-leak.md)
 - [Fire Alarm or Suppression Discharge](eop/eop-fire-alarm-or-suppression-discharge.md)
 - [Fuel Leak or Spill](eop/eop-fuel-leak.md)

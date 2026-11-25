@@ -47,6 +47,8 @@ A year-long plan of preventive maintenance for critical infrastructure. Interval
 | Fuel | Tank, piping, and leak detection inspection | | | | | |
 | Cooling units | Filters, belts, drains, coils, sensors | | | | | |
 | Chilled water plant | Chiller service; pump and drive checks | | | | | |
+| Liquid cooling (CDUs) | Filter service; fluid sampling, concentration, and quality testing | | | | | |
+| Liquid cooling (CDUs) | Pump rotation and failover check; leak detection test | | | | | |
 | Heat rejection | Cleaning and water treatment | | | | | |
 | Water systems | Valve exercising; leak detection test | | | | | |
 | Monitoring and controls | Backup, sensor calibration, alarm test | | | | | |

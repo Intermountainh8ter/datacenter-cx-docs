@@ -20,7 +20,7 @@ license: CC BY 4.0
 | Posted locations | |
 
 ## 2. Entry conditions
-Leak detection alarm, visible water, or a report of dripping in or above an electrical room, data hall, or plant room.
+Leak detection alarm, visible water, or a report of dripping in or above an electrical room, data hall, or plant room. For a leak of coolant from a CDU, rack manifold, or quick disconnect, use the [Loss of Liquid Cooling EOP](eop-loss-of-liquid-cooling.md).
 
 ## 3. Pre-site plan (preparedness)
 - [ ] Valve charts posted, showing what each isolation valve feeds and what stops when it is closed

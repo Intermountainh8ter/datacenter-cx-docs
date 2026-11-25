@@ -42,6 +42,7 @@ Enter the level and the sign-off or expiry date in each cell.
 | UPS mode identification and alarm response | | | | | |
 | Manual generator start and transfer | | | | | |
 | Cooling unit manual start and hand operation | | | | | |
+| CDU standby start, manual mode, and coolant leak isolation (where installed) | | | | | |
 | Fuel system valve lineup | | | | | |
 | Fire panel reading (not resetting) | | | | | |
 | Monitoring system operation and alarm handling | | | | | |

@@ -60,6 +60,7 @@ Generic starting points only. The manufacturer's list for the installed model go
 | Transfer equipment | Controller, coils, auxiliary contacts |
 | Cooling units | Fan assemblies or motors, speed drives, valve actuators, sensors, controller, belts, filters, condensate pump |
 | Chilled water and heat rejection | Pump seals and bearings, drive, valve actuators, sensors, starters |
+| Liquid cooling (CDUs) | Pump or pump cartridge, temperature, pressure, and flow sensors, filters, controller, leak sensors, quick disconnects, makeup stock of the specified coolant |
 | Monitoring and controls | Controllers, input and output modules, power supplies, network switches, programmed spare with current configuration |
 | Fire and leak detection | Detectors, modules, power supplies, per the vendor and code requirements |
 

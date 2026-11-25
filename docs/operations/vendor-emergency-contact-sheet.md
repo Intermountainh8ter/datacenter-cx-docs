@@ -41,6 +41,7 @@ One page per site, posted in the control room and carried by the shift lead. It 
 | Switchgear and transfer equipment | | | | | |
 | Cooling units | | | | | |
 | Chillers and plant | | | | | |
+| Liquid cooling (CDUs) and coolant supply | | | | | |
 | Controls and monitoring | | | | | |
 | Fire detection and suppression | | | | | |
 | Plumbing | | | | | |

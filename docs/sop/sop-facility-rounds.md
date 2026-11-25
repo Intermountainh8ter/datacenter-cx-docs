@@ -47,9 +47,10 @@ Hearing protection in generator and plant rooms. Do not open energized enclosure
 | 5 | Fuel system | Tank levels, leak detection status, containment dry | Site value | | |
 | 6 | Cooling plant | Units running against the lineup, pressures, temperatures, leaks, vibration | Site value | | |
 | 7 | Data hall | Cooling units running, supply and return temperatures, hot spots, leak detection, floor and containment condition | Site value | | |
-| 8 | Fire and life safety | Panel normal, no troubles, suppression pressures, exits clear | Site value | | |
-| 9 | Monitoring system | Screens match what was seen; note any point reading differently from the field | Match | | |
-| 10 | Housekeeping and security | Doors closed, no stored combustibles, no unescorted persons | Normal | | |
+| 8 | Liquid cooling (where installed) | CDU mode and alarms, supply and return temperature, flow, differential pressure, reservoir level, filter differential pressure; drip trays and manifolds dry | Site value | | |
+| 9 | Fire and life safety | Panel normal, no troubles, suppression pressures, exits clear | Site value | | |
+| 10 | Monitoring system | Screens match what was seen; note any point reading differently from the field | Match | | |
+| 11 | Housekeeping and security | Doors closed, no stored combustibles, no unescorted persons | Normal | | |
 
 ## 7. Abnormal conditions
 - Reading outside normal but stable: record, notify the shift lead, raise a ticket.

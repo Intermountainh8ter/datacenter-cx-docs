@@ -156,7 +156,7 @@ Fluid lost during testing is replaced with fluid of the same specification and c
 - [ ] Override log clear; heat load units disconnected and quick disconnects capped
 - [ ] Leak detection sensors dried and reset; all zones normal
 - [ ] Laboratory fluid results received and filed
-- [ ] Operations baseline recorded: pump failover dip, CDU loss excursion (if tested), and time to limit on loss of facility water
+- [ ] Operations baseline recorded: pump failover dip, CDU loss excursion (if tested), and time to limit on loss of facility water; given to operations for the [Loss of Liquid Cooling EOP](../eop/eop-loss-of-liquid-cooling.md)
 - [ ] Issues logged; retests scheduled
 
 | Role | Name | Signature | Date |

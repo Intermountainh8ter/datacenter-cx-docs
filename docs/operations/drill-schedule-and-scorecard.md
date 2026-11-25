@@ -28,6 +28,7 @@ Every shift should see every critical EOP. Rotate so no shift repeats a scenario
 | | Loss of utility | | | | | |
 | | UPS failure | | | | | |
 | | Loss of cooling | | | | | |
+| | Loss of liquid cooling or coolant leak (where installed) | | | | | |
 | | Water leak | | | | | |
 | | Fire alarm or suppression discharge | | | | | |
 | | Fuel leak | | | | | |

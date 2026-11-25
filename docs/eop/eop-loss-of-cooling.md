@@ -7,7 +7,7 @@ license: CC BY 4.0
 
 # EOP: Loss of Cooling
 
-> Example EOP for a generic data hall. Temperature limits and time-to-limit come from the design basis and commissioning data, not from this document.
+> Example EOP for a generic data hall. Temperature limits and time-to-limit come from the design basis and commissioning data, not from this document. For CDUs and the liquid cooling network serving cold plates, use the [Loss of Liquid Cooling EOP](eop-loss-of-liquid-cooling.md) alongside this one.
 
 ## 1. Document control
 
