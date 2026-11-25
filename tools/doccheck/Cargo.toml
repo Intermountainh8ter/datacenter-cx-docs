@@ -1,0 +1,8 @@
+[package]
+name = "doccheck"
+version = "0.1.0"
+edition = "2021"
+description = "Lints docs/: frontmatter status, VERIFY register coverage, banned terms"
+license = "MIT"
+
+[dependencies]

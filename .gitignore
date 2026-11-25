@@ -1,0 +1,6 @@
+/target
+/tools/doccheck/target
+/book
+# Local-only list of terms that must never appear in the repo (client/site names).
+# Kept out of git on purpose so the list itself does not leak them.
+.doccheck-banned.txt
