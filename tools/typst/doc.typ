@@ -50,6 +50,54 @@
 #set table(stroke: 0.4pt + luma(120), inset: 4pt)
 #show table.cell.where(y: 0): set text(weight: "bold")
 
+// Fill-in forms have empty cells, so their columns would shrink to the width
+// of the headings and leave no room to write. Any table narrower than the
+// page is stretched to full width, with each column's share based on its
+// longest text. Tables that already fill the page are left as they are.
+#let plain-length(c) = {
+  if type(c) == str { c.len() }
+  else if type(c) != content { 0 }
+  // The writing-space box added below counts as content, so a cell that
+  // has already been given one is not treated as empty again.
+  else if c.func() == box { 1 }
+  else if c.has("text") and type(c.text) == str { c.text.len() }
+  else if c.has("children") { c.children.map(plain-length).sum(default: 0) }
+  else if c.has("body") { plain-length(c.body) }
+  else if c.has("child") { plain-length(c.child) }
+  else { 0 }
+}
+// An empty cell is one to write in: give it a minimum height.
+#let writing-space = box(width: 0pt, height: 13pt)
+#let is-group(c) = c.func() == table.header or c.func() == table.footer
+#show table: it => {
+  let n = it.columns.len()
+  let cells = it.children.map(c => if is-group(c) { c.children } else { (c,) }).flatten()
+  let has-empty = cells.any(c => plain-length(c) == 0)
+  let all-auto = it.columns.all(c => c == auto)
+  // Nothing to do. This is also what stops the rule from applying forever to
+  // the table it produces: that table has no empty cells, and if it was
+  // stretched its columns are no longer automatic.
+  if not has-empty and not all-auto { return it }
+
+  let weights = range(n).map(i => {
+    let longest = cells.enumerate()
+      .filter(p => calc.rem(p.at(0), n) == i)
+      .map(p => plain-length(p.at(1)))
+      .fold(0, calc.max)
+    calc.clamp(longest, 10, 40)
+  })
+  let filled = it.children.map(c =>
+    if not is-group(c) and plain-length(c) == 0 { writing-space } else { c }
+  )
+  layout(size => {
+    let stretch = all-auto and measure(it).width < size.width - 1pt
+    if not stretch and not has-empty { it }
+    else {
+      table(columns: if stretch { weights.map(w => w * 1fr) } else { it.columns }, ..filled)
+    }
+  })
+}
+
 // Checklist items print as empty boxes to tick by hand.
 #let prepared = body.replace("- [ ] ", "- ☐ ")
 
