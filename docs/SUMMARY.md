@@ -59,6 +59,11 @@
 - [Fire Alarm and Suppression Interfaces](cx-scripts/fpt-fire-alarm-interfaces.md)
 - [Data Hall Heat-Rise Test](cx-scripts/fpt-heat-rise-test.md)
 
+# Test Plans
+
+- [Generator Paralleling Functional Test Plan](test-plans/generator-paralleling-test-plan.md)
+- [CDU and Secondary Fluid Network Functional Test Plan](test-plans/cdu-liquid-loop-functional-test-plan.md)
+
 # IST: Integrated Systems Testing
 
 - [IST Readiness Checklist](ist/ist-readiness-checklist.md)
