@@ -66,10 +66,10 @@ Every `[VERIFY: ...]` placeholder in `docs/` is listed here against the file tha
 | operations/training-and-qualification-matrix.md | `[VERIFY: NFPA 70E section on training requirements for qualified persons]` |
 | sop/sop-generator-periodic-run.md | `[VERIFY: NFPA 110 section on routine exercise frequency and loading]` |
 | templates/ist-script-template.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
-| test-plans/cdu-liquid-loop-functional-test-plan.md | `[VERIFY: ASME B31.9 leak testing section]` |
 | test-plans/cdu-liquid-loop-functional-test-plan.md | `[VERIFY: ASHRAE Liquid Cooling Guidelines for Datacom Equipment Centers, secondary (TCS) fluid quality section]` |
-| test-plans/cdu-liquid-loop-functional-test-plan.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
 | test-plans/cdu-liquid-loop-functional-test-plan.md | `[VERIFY: ASHRAE Liquid Cooling Guidelines for Datacom Equipment Centers, facility and TCS temperature class section]` |
+| test-plans/cdu-liquid-loop-functional-test-plan.md | `[VERIFY: ASME B31.9 leak testing section]` |
+| test-plans/cdu-liquid-loop-functional-test-plan.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
 | test-plans/generator-paralleling-test-plan.md | `[VERIFY: NETA ATS protective relay and switchgear test sections]` |
 | test-plans/generator-paralleling-test-plan.md | `[VERIFY: NFPA 110 acceptance test section]` |
 | test-plans/generator-paralleling-test-plan.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
