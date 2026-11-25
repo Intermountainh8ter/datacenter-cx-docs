@@ -13,15 +13,16 @@ Procedures only work inside a program that keeps them current, keeps people able
 
 | Part | What it does | Document in this repository |
 |---|---|---|
-| Procedures | Control planned, routine, and emergency work | MOP, SOP, and EOP templates |
-| Change and work authorization | Stops unapproved or conflicting work | Change and Work Authorization SOP |
+| Procedures | Control planned, routine, and emergency work | [MOP](../mop/mop-template.md), [SOP](../sop/sop-template.md), and [EOP](../eop/eop-template.md) templates |
+| Change and work authorization | Stops unapproved or conflicting work | [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md) |
 | Training and qualification | Makes sure the person doing the task is able and signed off | [Training and Qualification Matrix](training-and-qualification-matrix.md) |
 | Drills | Proves the EOPs and the people work under pressure | [Drill Schedule and Scorecard](drill-schedule-and-scorecard.md) |
 | Maintenance | Keeps equipment in its commissioned state | [Maintenance Calendar](maintenance-calendar.md) |
 | Vendor support | Gets the right help to site fast | [Vendor Emergency Contact Sheet](vendor-emergency-contact-sheet.md) |
-| Critical spares | Makes failures recoverable | Spares program guide and register |
-| Shift operations | Keeps the true state of the facility known | Rounds SOP, Shift Turnover SOP |
-| Learning | Turns events into improvements | Post-Event Review template |
+| Critical spares | Makes failures recoverable | [Spares program guide](../spares/critical-spares-program-guide.md) and [register](../spares/critical-spares-inventory-template.md) |
+| Shift operations | Keeps the true state of the facility known | [Rounds SOP](../sop/sop-facility-rounds.md), [Shift Turnover SOP](../sop/sop-shift-turnover.md) |
+| Learning | Turns events into improvements | [Post-Event Review template](../templates/post-event-review.md) |
+| Handover from commissioning | Starts operations with the documents, baseline, training, and spares in place | [Turnover and Handover Checklist](../checklists/turnover-handover-checklist.md) |
 
 ## Review rhythm
 
@@ -49,4 +50,4 @@ Procedures only work inside a program that keeps them current, keeps people able
 
 ## Starting from commissioning
 
-The best time to build this program is before turnover. Operations staff attend the functional and integrated tests, draft the EOPs from what they see, and take the commissioning results as their baseline: start times, transfer times, time-to-limit, and normal readings for rounds.
+The best time to build this program is before turnover. Operations staff attend the functional and integrated tests, draft the EOPs from what they see, and take the commissioning results as their baseline: start times, transfer times, time-to-limit, and normal readings for rounds. The [Turnover and Handover Checklist](../checklists/turnover-handover-checklist.md) records that this happened.

@@ -74,6 +74,7 @@
 - [IST Script Template](templates/ist-script-template.md)
 - [IST Script: Loss and Return of Utility](ist/ist-script-loss-of-utility.md)
 - [Level 5 Verification Checklist (Owner)](checklists/level-5-verification-checklist.md)
+- [Turnover and Handover Checklist](checklists/turnover-handover-checklist.md)
 
 # Critical Spare Parts
 

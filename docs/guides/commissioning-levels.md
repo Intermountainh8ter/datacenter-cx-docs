@@ -27,7 +27,7 @@ A gate is a recorded decision, by a named approver, that a level is complete eno
 | 2 to 3 (energize) | Installation complete and inspected; equipment matches the approved submittal | Closed installation sections of the pre-functional checklist |
 | 3 to 4 (functional test) | Vendor startup complete; pre-functional checklist closed; **controls point-to-point checkout accepted** for every point the script uses | Startup reports, closed checklists, accepted point-to-point sheets |
 | 4 to 5 (integrated test) | Functional tests passed for every system in the IST scenarios; issues affecting IST closed or accepted in writing | Completed scripts, issues log, IST readiness go/no-go |
-| 5 to turnover | IST report accepted after owner verification; open items each have an owner, date, and written acceptance | Level 5 verification checklist, final issues log |
+| 5 to turnover | IST report accepted after owner verification; open items each have an owner, date, and written acceptance | Level 5 verification checklist, final issues log, [Turnover and Handover Checklist](../checklists/turnover-handover-checklist.md) |
 
 ## Rules for every gate
 
