@@ -11,6 +11,7 @@ Every `[VERIFY: ...]` placeholder in `docs/` is listed here against the file tha
 
 | File | Placeholder |
 |---|---|
+| DISCLAIMER.md | `[VERIFY: ...]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: manufacturer data and NETA ATS torque table section]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: NETA ATS applicable section]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: NFPA 70E labeling section]` |
@@ -54,4 +55,9 @@ Every `[VERIFY: ...]` placeholder in `docs/` is listed here against the file tha
 | mop/mop-ups-maintenance-bypass.md | `[VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]` |
 | mop/mop-ups-maintenance-bypass.md | `[VERIFY: OSHA 1910.147 lockout/tagout section]` |
 | one-pagers/cx-phases.md | `[VERIFY: ASHRAE Guideline 0 and Guideline 1.1 section numbers]` |
+| operations/maintenance-calendar.md | `[VERIFY: NETA MTS frequency of maintenance tests guidance]` |
+| operations/maintenance-calendar.md | `[VERIFY: NFPA 110 sections on operational inspection and testing]` |
+| operations/maintenance-calendar.md | `[VERIFY: IEEE battery maintenance standard for the installed battery type]` |
+| operations/maintenance-calendar.md | `[VERIFY: NFPA 72 sections on inspection, testing, and maintenance]` |
+| operations/training-and-qualification-matrix.md | `[VERIFY: NFPA 70E section on training requirements for qualified persons]` |
 | sop/sop-generator-periodic-run.md | `[VERIFY: NFPA 110 section on routine exercise frequency and loading]` |

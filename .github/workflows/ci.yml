@@ -11,3 +11,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cargo run --manifest-path tools/doccheck/Cargo.toml --release -- docs
+
+  pdf:
+    runs-on: ubuntu-latest
+    needs: doccheck
+    env:
+      TYPST_VERSION: v0.15.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Typst
+        run: |
+          curl -sfL "https://github.com/typst/typst/releases/download/${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" | tar -xJ
+          echo "TYPST=$PWD/typst-x86_64-unknown-linux-musl/typst" >> "$GITHUB_ENV"
+      - name: Build PDFs
+        run: cargo run --manifest-path tools/pdfbuild/Cargo.toml --release -- docs pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: draft-pdfs
+          path: pdf/

@@ -1,5 +1,7 @@
 # Summary
 
+[Disclaimer](DISCLAIMER.md)
+
 # Guides
 
 - [Document Types: MOP, SOP, EOP, Cx Script, IST](guides/document-types.md)
@@ -69,6 +71,14 @@
 - [Criticality Scoring Worksheet](spares/criticality-scoring-worksheet.md)
 - [Inventory Template](spares/critical-spares-inventory-template.md)
 - [Storage and Audit SOP](spares/sop-spares-storage-and-audit.md)
+
+# Operations Program
+
+- [Operations Program Overview](operations/operations-program-overview.md)
+- [Drill Schedule and Scorecard](operations/drill-schedule-and-scorecard.md)
+- [Training and Qualification Matrix](operations/training-and-qualification-matrix.md)
+- [Vendor Emergency Contact Sheet](operations/vendor-emergency-contact-sheet.md)
+- [Maintenance Calendar](operations/maintenance-calendar.md)
 
 # Templates and Registers
 

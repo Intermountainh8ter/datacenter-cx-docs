@@ -1,0 +1,8 @@
+[package]
+name = "pdfbuild"
+version = "0.1.0"
+edition = "2021"
+description = "Builds a PDF of every document in docs/ using Typst"
+license = "MIT"
+
+[dependencies]
