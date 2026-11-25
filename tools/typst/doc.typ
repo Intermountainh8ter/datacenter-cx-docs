@@ -49,6 +49,10 @@
 #show table: set text(size: 8pt)
 #set table(stroke: 0.4pt + luma(120), inset: 4pt)
 #show table.cell.where(y: 0): set text(weight: "bold")
+// Wide forms (a dozen columns on a portrait page) leave columns narrower
+// than some single words; hyphenate rather than let a word run into the
+// next cell.
+#show table.cell: set text(hyphenate: true)
 
 // Fill-in forms have empty cells, so their columns would shrink to the width
 // of the headings and leave no room to write. Any table narrower than the
@@ -79,13 +83,17 @@
   // stretched its columns are no longer automatic.
   if not has-empty and not all-auto { return it }
 
-  let weights = range(n).map(i => {
-    let longest = cells.enumerate()
-      .filter(p => calc.rem(p.at(0), n) == i)
-      .map(p => plain-length(p.at(1)))
-      .fold(0, calc.max)
-    calc.clamp(longest, 10, 40)
-  })
+  let column = i => cells.enumerate()
+    .filter(p => calc.rem(p.at(0), n) == i)
+    .map(p => plain-length(p.at(1)))
+  let shares = range(n).map(i => calc.clamp(column(i).fold(0, calc.max), 10, 40))
+  // A column with nothing below its heading is the column to write in
+  // (for example "Entry" beside a list of fields). Sizing it by its text
+  // would make it the narrowest, so it gets the widest column's share.
+  let widest = shares.fold(0, calc.max)
+  let weights = range(n).map(i =>
+    if column(i).slice(1).all(l => l == 0) { widest } else { shares.at(i) }
+  )
   let filled = it.children.map(c =>
     if not is-group(c) and plain-length(c) == 0 { writing-space } else { c }
   )
