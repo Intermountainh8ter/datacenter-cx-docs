@@ -10,10 +10,22 @@ license: CC BY 4.0
 > Example script for a generic standby generator with automatic transfer equipment, tested before the facility is live. Align with the OEM procedures and the approved sequence of operations.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| Generator (asset tag, serial number) | |
+| Transfer equipment (asset tags) | |
+| Generator controller and transfer controller firmware versions | |
+| Reference documents (sequence of operations, one-line, settings, submittals, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (design engineer, electrical contractor, generator vendor) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove the generator starts on signal, accepts load, runs at rated load, and that transfer and retransfer follow the sequence of operations.
+
+Run this script once per generator. Where several generators parallel onto a common bus, this script proves each unit on its own first; paralleling, load sharing, and load add and shed are then proven with the [Generator Paralleling Functional Test Plan](../test-plans/generator-paralleling-test-plan.md).
 
 ## 3. Risk and impact
 Facility not live. Risks: engine and alternator damage from faults under load, fuel leaks, switching hazards.
@@ -38,7 +50,14 @@ Facility not live. Risks: engine and alternator damage from faults under load, f
 Rotating parts, hot surfaces, noise, fuel, electrical switching. [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]
 
 ## 7. Test equipment
-Load bank, power quality recorder, stopwatch or event recorder, thermal imager, sound meter if required.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Load bank with step control and remote shut-off | | |
+| Power quality recorder | | |
+| Stopwatch or event recorder synchronized to the controller clocks | | |
+| Thermal imager | | |
+| Sound level meter (if required) | | |
 
 ## 8. Test steps
 
@@ -54,12 +73,23 @@ Load bank, power quality recorder, stopwatch or event recorder, thermal imager, 
 | 8 | Observe cool-down and stop | Runs for the set cool-down, stops, returns to ready | | | |
 | 9 | Simulate each pre-alarm and shutdown (vendor method) | Correct local indication, correct action, alarm at monitoring | | | |
 | 10 | Test failure to start (crank cycle) if required | Per design; alarm at monitoring | | | |
-| 11 | For multiple generators: test paralleling, load sharing, and loss of one unit at the redundant load | Per sequence of operations | | | |
+| 11 | For multiple generators: confirm this unit is ready for the [Generator Paralleling Functional Test Plan](../test-plans/generator-paralleling-test-plan.md) and record that plan's script ID here | Paralleling tested under its own plan | | | |
 | 12 | Verify fuel system functions: transfer pumps, level alarms, leak detection | Per design | | | |
 | 13 | Verify all points at the monitoring system | Correct | | | |
+| 14 | Record as-left settings and timers and compare with step 1 | Unchanged, or changes approved and recorded | | | |
+
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
 
 ## 9. Acceptance criteria
 From the specification, OEM data, and [VERIFY: NFPA 110 acceptance test section]. Electrical acceptance tests: [VERIFY: NETA ATS sections for generators and transfer switches].
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| Time from loss of normal source to generator ready | | |
+| Transfer and retransfer delays | | |
+| Voltage and frequency dip and recovery at each load step | | |
+| Duration at rated load | | |
+| Cool-down time | | |
 
 ## 10. Backout procedure
 **Triggers:** engine or alternator alarm; reading outside limits; leak or smoke; transfer equipment malfunction; unsafe condition.
@@ -68,11 +98,18 @@ From the specification, OEM data, and [VERIFY: NFPA 110 acceptance test section]
 |---|---|---|
 | Steps 2 to 4 | Restore the normal source signal; confirm retransfer; investigate | On normal source, generator in auto or tagged out |
 | Steps 5 to 6 | Remove load bank load in steps (at once for a fault); restore normal source; allow cool-down unless the fault requires immediate stop | On normal source |
+| Steps 7 to 8 (retransfer fails) | Stay on generator. Do not retry. Reduce load bank load; vendor investigates the transfer controls. Retransfer manually only under the vendor's direction | On generator, stable, or on normal source by manual retransfer |
 | Steps 9 to 12 | Remove simulations per the override log; reset with the vendor | Generator in auto |
 
 ## 11. Restoration and sign-off
 - [ ] Timers and setpoints at approved values
 - [ ] Fuel refilled to the turnover level
 - [ ] Override log clear; load bank disconnected; issues logged
+- [ ] Recorder data and controller event logs collected
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Electrical contractor | | | |
+| Generator vendor | | | |
+| Owner's witness | | | |
