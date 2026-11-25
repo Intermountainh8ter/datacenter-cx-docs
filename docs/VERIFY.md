@@ -12,6 +12,10 @@ Every `[VERIFY: ...]` placeholder in `docs/` is listed here against the file tha
 | File | Placeholder |
 |---|---|
 | DISCLAIMER.md | `[VERIFY: ...]` |
+| checklists/controls-point-to-point-checkout.md | `[VERIFY: project controls specification sensor accuracy section]` |
+| checklists/fat-fwt-witness-checklist.md | `[VERIFY: IEEE C37.20.2 production test section]` |
+| checklists/fat-fwt-witness-checklist.md | `[VERIFY: IEC 62040-3 routine and type test sections]` |
+| checklists/fat-fwt-witness-checklist.md | `[VERIFY: ISO 8528 factory test section]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: manufacturer data and NETA ATS torque table section]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: NETA ATS applicable section]` |
 | checklists/pre-functional-checklist.md | `[VERIFY: NFPA 70E labeling section]` |

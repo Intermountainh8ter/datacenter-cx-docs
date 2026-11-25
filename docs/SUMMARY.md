@@ -48,7 +48,9 @@
 
 # Commissioning Scripts
 
+- [Factory Acceptance / Factory Witness Test Checklist](checklists/fat-fwt-witness-checklist.md)
 - [Pre-Functional Checklist Template](checklists/pre-functional-checklist.md)
+- [Controls Point-to-Point Checkout Sheet](checklists/controls-point-to-point-checkout.md)
 - [Cx Script Template](cx-scripts/cx-script-template.md)
 - [UPS Functional Performance Test](cx-scripts/fpt-ups.md)
 - [Generator and Transfer Functional Performance Test](cx-scripts/fpt-generator-and-transfer.md)
@@ -69,6 +71,7 @@
 - [IST Readiness Checklist](ist/ist-readiness-checklist.md)
 - [IST Plan Outline](ist/integrated-systems-test-plan.md)
 - [IST Script: Loss and Return of Utility](ist/ist-script-loss-of-utility.md)
+- [Level 5 Verification Checklist (Owner)](checklists/level-5-verification-checklist.md)
 
 # Critical Spare Parts
 
