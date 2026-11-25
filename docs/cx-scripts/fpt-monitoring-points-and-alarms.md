@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example script for verifying a building or power monitoring system. The approved points list is the test basis.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| System (BMS, EPMS, or both) and server | |
+| Software and controller firmware versions | |
+| Points list, alarm matrix, and graphics revisions | |
+| Configuration backup reference | |
+| Sample size and selection method (if sampling) | |
+| Author (Cx agent) / date | |
+| Reviewed by (controls integrator, design engineer, owner's operations) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove that every point reads true from the field device to the operator screen, every alarm reaches the right people with the right priority, and the system behaves safely when it fails.
@@ -20,7 +31,7 @@ Forced points and simulated signals can cause real equipment to act. On a live s
 
 ## 4. Pre-site plan
 - [ ] Approved points list, alarm matrix (priority, delay, recipients), and graphics at current revision
-- [ ] Controls integrator's own point-to-point checkout sheets received
+- [ ] Controls point-to-point checkout accepted for the points under test: this is the Level 4 entry gate (see the [Controls Point-to-Point Checkout Sheet](../checklists/controls-point-to-point-checkout.md)). This script samples and confirms that work; it does not replace it
 - [ ] Sample size agreed if not testing every point (critical points are always tested in full)
 - [ ] Simulation tools arranged: signal simulator, decade box, test software access
 - [ ] User accounts for testers created with the right access level
@@ -36,7 +47,13 @@ Forced points and simulated signals can cause real equipment to act. On a live s
 Work at field devices follows the hazards of that equipment. No forcing of outputs to equipment without the equipment owner present.
 
 ## 7. Test equipment
-Signal simulator, reference instruments, laptop with read access.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Signal simulator | | |
+| Decade box | | |
+| Reference instruments (temperature, pressure, electrical) | | |
+| Laptop with read access and test software | | |
 
 ## 8. Test steps
 
@@ -56,9 +73,20 @@ Signal simulator, reference instruments, laptop with read access.
 | 12 | Fail the server or front end | Controllers continue; data backfilled on return if designed | | | |
 | 13 | Check time synchronization across controllers and server | Consistent timestamps | | | |
 | 14 | Check user access levels | Each role can do only what it should | | | |
+| 15 | Record as-left: points in override (expected: none), alarm delays and limits, configuration backup reference; compare with step 1 | No overrides; values approved | | | |
+
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
 
 ## 9. Acceptance criteria
 The approved points list, alarm matrix, and specification. Record the pass rate and every failed point by tag.
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| Points tested and pass rate (critical points: all tested) | | |
+| Analog accuracy against the reference | | |
+| Alarm delay, text, priority, and recipients per the alarm matrix | | |
+| Controller restart without manual action | | |
+| Time synchronization across controllers and server | | |
 
 ## 10. Backout procedure
 **Triggers:** a forced or simulated point causes an unintended equipment action; loss of control of live equipment; configuration corruption.
@@ -76,4 +104,9 @@ Every force and override is entered in the override log and cleared before sign-
 - [ ] Test alarms cleared; recipients told that testing is complete
 - [ ] Failed points logged in the issues log
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Controls integrator | | | |
+| Owner's operations representative | | | |
+| Owner's witness | | | |

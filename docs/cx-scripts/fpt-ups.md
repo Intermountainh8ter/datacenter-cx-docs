@@ -10,7 +10,17 @@ license: CC BY 4.0
 > Example script for a generic UPS system tested on a load bank before any critical load is connected. Align every step with the OEM test procedure and the approved sequence of operations.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| UPS system and modules (asset tags, serial numbers) | |
+| Battery strings (asset tags, battery type) | |
+| UPS firmware version | |
+| Reference documents (sequence of operations, one-line, settings, submittals, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (design engineer, electrical contractor, UPS vendor) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove the UPS carries load in all modes, transfers without interruption, supports the load on battery for the design time, and reports correctly to monitoring.
@@ -37,7 +47,14 @@ No critical load is connected. Risks are to equipment and people: battery discha
 Battery and DC hazards, arc flash at connection points, load bank heat. [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]
 
 ## 7. Test equipment
-Load bank, power quality recorder, multimeter, thermal imager, battery monitoring readout.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Load bank with step control and remote shut-off | | |
+| Power quality recorder | | |
+| Multimeter | | |
+| Thermal imager | | |
+| Battery monitoring readout or battery test set | | |
 
 ## 8. Test steps
 
@@ -56,9 +73,20 @@ Load bank, power quality recorder, multimeter, thermal imager, battery monitorin
 | 11 | Test the maintenance bypass sequence and its interlocks | Interlocks prevent wrong sequence; no interruption | | | |
 | 12 | Test emergency power off only if required and agreed, with the load bank at zero | Per design | | | |
 | 13 | Verify each alarm and status point at the monitoring system | Text, priority, and timestamp correct | | | |
+| 14 | Record as-left mode, settings, and alarms and compare with step 1 | Unchanged, or changes approved and recorded | | | |
+
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
 
 ## 9. Acceptance criteria
 From the project specification and OEM data. Electrical acceptance tests: [VERIFY: NETA ATS sections for UPS systems and batteries].
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| Output voltage and frequency at each load step | | |
+| Output transient at the specified load step | | |
+| Transfer to and from static bypass | | |
+| Battery run time at the test load, and end voltage | | |
+| Recharge time (if specified) | | |
 
 ## 10. Backout procedure
 **Triggers:** output outside tolerance; battery temperature or voltage abnormal; hot spot found; load bank fault; any unsafe condition.
@@ -67,11 +95,18 @@ From the project specification and OEM data. Electrical acceptance tests: [VERIF
 |---|---|---|
 | Steps 2 to 5 (load testing) | Remove load in steps; return UPS to normal mode | UPS normal, zero load |
 | Steps 6 to 8 (on battery) | Restore input at once; remove load; let batteries recharge before any retest | UPS normal, batteries charging |
-| Steps 9 to 12 (simulated faults) | Remove the simulation per the override log; return to normal mode with the vendor | UPS normal |
+| Steps 9 to 10 (simulated faults, module out of service) | Remove the simulation per the override log; return any module to service; return to normal mode with the vendor | UPS normal |
+| Step 11 (maintenance bypass) | Complete or reverse the bypass sequence per the OEM steps, so that the load is not left on an unintended source; confirm every interlock and breaker position | UPS normal, maintenance bypass open |
+| Step 12 (emergency power off) | Confirm the load bank is at zero; reset the EPO circuit; vendor restarts the UPS by the OEM method | UPS normal, zero load |
 
 ## 11. Restoration and sign-off
 - [ ] Settings as recorded in step 1 or as approved
 - [ ] Batteries recharged; load bank disconnected with breaker open and locked
 - [ ] Override log clear; issues logged
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Electrical contractor | | | |
+| UPS vendor | | | |
+| Owner's witness | | | |

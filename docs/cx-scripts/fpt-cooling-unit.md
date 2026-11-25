@@ -10,7 +10,16 @@ license: CC BY 4.0
 > Example script for a generic chilled-water computer room cooling unit in a group. Align with the OEM procedures and the approved sequence of operations.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| Cooling units (asset tags) and group | |
+| Unit and group controller firmware versions | |
+| Reference documents (sequence of operations, setpoint list, water balancing report, submittals, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (design engineer, mechanical contractor, cooling unit vendor, controls) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove each unit controls to setpoint, responds to failures, restarts after power loss, and works with the group (lead/standby, rotation).
@@ -35,7 +44,14 @@ Facility not live. If heat load banks are used, an uncontrolled temperature rise
 Rotating fans, electrical panels, hot load banks, open floor tiles.
 
 ## 7. Test equipment
-Reference thermometer and hygrometer, airflow instrument if required, multimeter, load banks.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Reference thermometer | | |
+| Reference hygrometer | | |
+| Airflow instrument (if required) | | |
+| Multimeter | | |
+| Heat load banks with remote shut-off (if capacity is shown) | | |
 
 ## 8. Test steps
 
@@ -55,9 +71,20 @@ Reference thermometer and hygrometer, airflow instrument if required, multimeter
 | 12 | Test lead/standby rotation | Rotates per sequence | | | |
 | 13 | With heat load applied: stop one unit at the redundant load level | Room stays within limits | | | |
 | 14 | Verify all points and alarms at the monitoring system | Correct | | | |
+| 15 | Record as-left setpoints and modes and compare with step 1 | Unchanged, or changes approved and recorded | | | |
+
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
 
 ## 9. Acceptance criteria
 From the sequence of operations and specification. Room conditions: [VERIFY: ASHRAE thermal guidelines section for allowable ranges].
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| Sensor accuracy against the reference instrument | | |
+| Temperature control stability at setpoint | | |
+| Restart time and mode after power loss | | |
+| Standby start on unit failure | | |
+| Room conditions at the redundant load level | | |
 
 ## 10. Backout procedure
 **Triggers:** room temperature approaching the test limit; leak; equipment fault; unsafe condition.
@@ -65,7 +92,8 @@ From the sequence of operations and specification. Room conditions: [VERIFY: ASH
 | If stopped during | Abort steps | End state |
 |---|---|---|
 | Steps 2 to 6 | Return setpoints to step 1 values; unit to automatic | Normal |
-| Steps 7 to 12 | Remove the simulation per the override log; reset alarms | Normal |
+| Steps 7 to 9, 12 | Remove the simulation per the override log; reset alarms | Normal |
+| Steps 10 to 11 (unit or group does not recover) | If heat load is applied and the room is warming, shed the heat load first. Restore power or reconnect the network; start the unit from its local controls; vendor investigates | Unit running on local control; issue logged |
 | Step 13 | Switch off heat load first, then restart all units | Room cooling, no heat load |
 
 ## 11. Restoration and sign-off
@@ -73,4 +101,10 @@ From the sequence of operations and specification. Room conditions: [VERIFY: ASH
 - [ ] Load banks off and removed; floor tiles replaced
 - [ ] Issues logged
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Mechanical contractor | | | |
+| Cooling unit vendor | | | |
+| Controls contractor | | | |
+| Owner's witness | | | |

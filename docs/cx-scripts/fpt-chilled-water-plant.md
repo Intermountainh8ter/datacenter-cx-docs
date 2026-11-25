@@ -10,7 +10,16 @@ license: CC BY 4.0
 > Example script for a generic chilled water plant with multiple chillers, pumps, and heat rejection units. Align with the OEM procedures and the approved sequence of operations.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| Chillers, pumps, and heat rejection units (asset tags) | |
+| Plant controller firmware version | |
+| Reference documents (sequence of operations, setpoint list, flushing, water treatment, and balancing reports, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (design engineer, mechanical contractor, chiller vendor, controls) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove the plant starts, stages, controls to setpoint, survives the loss of any one component, and restarts after a power loss in the time the design requires.
@@ -38,7 +47,14 @@ Facility not live. Risks: equipment damage from running without flow, freezing a
 Rotating equipment, refrigerant, electrical, hot and cold surfaces, water treatment chemicals. Chiller vendor present for chiller failure tests.
 
 ## 7. Test equipment
-Reference thermometers, pressure gauges, flow measurement, multimeter, load banks.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Reference thermometers | | |
+| Reference pressure gauges | | |
+| Flow measurement (portable, or a verified meter) | | |
+| Multimeter | | |
+| Load banks or plant load bank with remote shut-off | | |
 
 ## 8. Test steps
 
@@ -61,9 +77,20 @@ Reference thermometers, pressure gauges, flow measurement, multimeter, load bank
 | 15 | Test economizer or free-cooling changeover, if installed and conditions allow | Changes over without loss of supply temperature control | | | |
 | 16 | Test makeup water, expansion, and low-pressure or leak alarms | Per design | | | |
 | 17 | Verify all points and alarms at the monitoring system | Correct | | | |
+| 18 | Record as-left setpoints, modes, and lead/standby assignments and compare with step 1 | Unchanged, or changes approved and recorded | | | |
+
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
 
 ## 9. Acceptance criteria
 Sequence of operations and specification. Record the restart time from step 12 for use in the heat-rise test and in operations.
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| Supply temperature and differential pressure at setpoint, steady state | | |
+| Staging points (on and off) | | |
+| Supply temperature recovery after loss of the lead chiller | | |
+| Restart time from power return to stable supply temperature | | |
+| Minimum flow protection | | |
 
 ## 10. Backout procedure
 **Triggers:** loss of flow with a chiller running; supply temperature or room temperature approaching the test limit; refrigerant or water leak; equipment fault; unsafe condition.
@@ -73,6 +100,8 @@ Sequence of operations and specification. Record the restart time from step 12 f
 | Steps 2 to 6 | Return setpoints to step 1 values; plant to automatic | Normal |
 | Steps 7 to 11, 13 | Remove the simulation per the override log; reset alarms with the vendor; confirm the plant recovers | Normal |
 | Step 12 | Restore power at once; if the plant does not restart, start it manually by the posted steps | Plant running |
+| Steps 14 to 16 | Return lead/standby assignments to their step 1 values; if a changeover stalls, return the plant to its normal cooling mode manually; remove makeup or leak simulations and confirm system pressure | Normal |
+| Loss of flow with a chiller running | Stop the affected chiller at once by its local stop, with the vendor; restore flow; restart only after the vendor confirms no damage | Chiller off, flow restored |
 | Room temperature at the limit | Shed load banks first, then recover the plant | No heat load |
 
 ## 11. Restoration and sign-off
@@ -80,4 +109,10 @@ Sequence of operations and specification. Record the restart time from step 12 f
 - [ ] Deferred seasonal tests logged with owner and date
 - [ ] Issues logged
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Mechanical contractor | | | |
+| Chiller vendor | | | |
+| Controls contractor | | | |
+| Owner's witness | | | |

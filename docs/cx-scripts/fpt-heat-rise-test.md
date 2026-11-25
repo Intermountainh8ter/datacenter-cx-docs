@@ -10,7 +10,17 @@ license: CC BY 4.0
 > Example script for measuring how fast a data hall warms when cooling stops, using load banks and no production equipment. The result is a baseline for operations and for the loss of cooling EOP.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| Data hall and cooling systems under test (generic identifiers) | |
+| Test load and its distribution | |
+| Stop limit and sensor location (from the pre-site plan) | |
+| Reference documents (cooling and plant functional test reports, sequence of operations, load bank layout, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (owner, design engineer, mechanical vendor, fire system vendor) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Measure the time from loss of cooling to the agreed temperature limit at a stated load, and the time for the hall to recover once cooling returns.
@@ -39,7 +49,12 @@ The test deliberately removes cooling. Risks: overheating load banks, cables, or
 Hot surfaces and hot air in the hall. Limit time in the hot aisle. Fire watch during the test.
 
 ## 7. Test equipment
-Temperature loggers, load banks with remote shut-off, timing device.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Temperature loggers (one row per logger, with location) | | |
+| Load banks with remote shut-off | | |
+| Timing device synchronized to the monitoring system | | |
 
 ## 8. Test steps
 
@@ -54,16 +69,27 @@ Temperature loggers, load banks with remote shut-off, timing device.
 | 6 | Record the time for inlet temperatures to return to the normal range | Recovery time recorded | | | |
 | 7 | Repeat at other load levels or with partial cooling loss, if in scope, after full recovery | Recorded | | | |
 | 8 | Check for any alarm or fire system response during the test | As expected | | | |
+| 9 | Record as-left: load bank state, cooling status, and temperatures; compare with step 1 | Normal | | | |
+
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
 
 ## 9. Acceptance criteria
 This is a characterization test: the result is the time-to-limit and recovery curve. Compare with the design prediction if one exists, and with the ride-through the design relies on (for example, the cooling restart time measured in the plant test).
+
+| Result | Recorded value | Compared with |
+|---|---|---|
+| Test load and distribution | | |
+| Time from cooling stop to the stop limit | | Design prediction, if any |
+| Peak temperature and its location | | |
+| Time from cooling restart to the normal range | | Cooling restart time from the plant test |
+| Ride-through the design relies on | | |
 
 ## 10. Backout procedure
 **Triggers:** stop limit reached; any sensor rising faster than expected near equipment or detectors; fire alarm pre-signal; cooling does not restart; unsafe condition.
 
 | If stopped during | Abort steps | End state |
 |---|---|---|
-| Steps 2 to 4 | **Shed the load banks first** with the remote shut-off, then restart cooling | No heat load, cooling running |
+| Steps 2 to 4, and each repeat in step 7 | **Shed the load banks first** with the remote shut-off, then restart cooling | No heat load, cooling running |
 | Cooling does not restart | Keep load banks off; start cooling manually by the posted steps; open doors only if the site plan says this helps | Hall cooling down |
 | Fire alarm response | Stop the test; load banks off; follow the fire EOP until the cause is confirmed | Emergency response in effect |
 
@@ -73,4 +99,9 @@ This is a characterization test: the result is the time-to-limit and recovery cu
 - [ ] Loggers collected; data saved with the test load and layout
 - [ ] Time-to-limit and recovery time given to operations for the loss of cooling EOP
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Mechanical vendor | | | |
+| Owner's witness | | | |
+| Operations representative (baseline received) | | | |

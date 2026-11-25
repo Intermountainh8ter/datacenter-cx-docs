@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example script for the interfaces between the fire systems and the rest of the facility. It does not replace the fire system's own acceptance test by the installer and the authority having jurisdiction.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| Fire alarm panel and suppression systems (asset tags) and zones under test | |
+| Fire panel firmware or program version | |
+| Cause-and-effect matrix revision | |
+| Reference documents (fire alarm drawings, sequences of operation for interfaced systems, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (fire system vendor, design engineer, mechanical and controls contractors) | |
+| Fire watch arranged (name and contact) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove that each fire system output causes the right response in the other systems, and only that response: air handling shutdown, damper closure, door release, power shutdown where designed, and signals to monitoring.
@@ -38,7 +49,12 @@ Prove that each fire system output causes the right response in the other system
 Clean-agent and gas systems are a hazard to people if discharged. No one works in a protected space with releases armed during testing.
 
 ## 7. Test equipment
-Vendor's detector test equipment, multimeter, the cause-and-effect matrix as the record sheet.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Vendor's detector test equipment | | |
+| Multimeter (release and trip circuit measurement) | | |
+| Cause-and-effect matrix, used as the record sheet (revision in the ID column) | | |
 
 ## 8. Test steps
 
@@ -61,8 +77,17 @@ Vendor's detector test equipment, multimeter, the cause-and-effect matrix as the
 | 15 | Reset the fire panel | Dampers, air handling, and doors return to normal only as the design says (automatic or manual reset) | | | |
 | 16 | Repeat steps 2 to 15 for each zone | Per the matrix | | | |
 
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
+
 ## 9. Acceptance criteria
 Every line of the cause-and-effect matrix proven, and no action observed that is not in the matrix.
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| Matrix lines proven (proven / total) | | |
+| Actions observed that are not in the matrix (expected: none) | | |
+| Release output signal measured at each disabled release circuit | | |
+| Power shutdown outputs present only for the inputs in the matrix | | |
 
 ## 10. Backout procedure
 **Triggers:** any sign that a release is not disabled; an unintended shutdown; a real alarm during testing; unsafe condition.
@@ -72,6 +97,7 @@ Every line of the cause-and-effect matrix proven, and no action observed that is
 | Any step | Vendor silences and resets the panel; all test signals removed | Panel normal, releases still disabled |
 | Real alarm during testing | Stop all testing. Treat it as real. Follow the fire EOP. Vendor returns the system to full service at once if safe | Emergency response in effect |
 | Unintended shutdown of equipment | Stop. Restore the equipment by its own procedure. Find the unintended link before continuing | Equipment restored; issue logged |
+| Step 14 (panel main power removed) | Restore main power; confirm the panel returns to normal and its standby supply is recharging | Panel normal on main power |
 
 **Re-arming is a controlled step:** the named person and the vendor re-arm each release, verify it against the as-found record, and sign the override log.
 
@@ -79,6 +105,13 @@ Every line of the cause-and-effect matrix proven, and no action observed that is
 - [ ] All releases re-armed and verified; panel normal with no disabled devices
 - [ ] Trip circuits reconnected and verified
 - [ ] Receiving center and fire service told that testing is complete; fire watch stood down
+- [ ] As-left panel state, disabled devices, and release status recorded and compared with step 1
 - [ ] Override log clear; issues logged
 
-Sign-off block as in the template, with the fire system vendor added.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Fire system vendor | | | |
+| Mechanical contractor | | | |
+| Controls contractor | | | |
+| Owner's witness | | | |

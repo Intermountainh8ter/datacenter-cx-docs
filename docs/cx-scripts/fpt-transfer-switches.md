@@ -10,7 +10,17 @@ license: CC BY 4.0
 > Example script for generic automatic transfer switches (ATS) and static transfer switches (STS), tested on a load bank or non-critical load before the facility is live. Align with the OEM procedures and the approved sequence of operations.
 
 ## 1. Document control
-Use the block from the [Cx Script Template](cx-script-template.md).
+
+| Field | Entry |
+|---|---|
+| Script ID and revision | |
+| Switches under test (asset tags; ATS or STS) | |
+| Controller firmware versions | |
+| Approved settings revision | |
+| Reference documents (sequence of operations, one-line, submittals, revision) | |
+| Author (Cx agent) / date | |
+| Reviewed by (design engineer, electrical contractor, switch vendor) | |
+| Test date | |
 
 ## 2. Purpose and scope
 Prove that each switch transfers and retransfers on the right conditions, at the right times, without unacceptable disturbance to the load, and that its bypass, interlocks, and alarms work.
@@ -36,7 +46,14 @@ Facility not live. Risks: switching hazards, out-of-phase transfer if settings a
 Electrical switching and work at sensing terminals: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit].
 
 ## 7. Test equipment
-Power quality recorder, multimeter, phase rotation meter, timing device, test set for sensing inputs if used.
+
+| Instrument | ID | Calibration due |
+|---|---|---|
+| Power quality recorder (load side) | | |
+| Multimeter | | |
+| Phase rotation meter | | |
+| Timing device | | |
+| Test set for sensing inputs (if used) | | |
 
 ## 8. Test steps
 
@@ -71,8 +88,18 @@ Power quality recorder, multimeter, phase rotation meter, timing device, test se
 | B8 | Remove one control power supply | Switch continues on the redundant supply; alarm | | | |
 | B9 | Verify every status and alarm at the monitoring system | Correct | | | |
 
+Rules: record what was observed, not "OK". A failed step is logged in the [Cx Issues Log](../templates/issues-log.md) with an ID and is retested in full after the root cause is found and corrected.
+
 ## 9. Acceptance criteria
 Approved settings, specification, and OEM data. Electrical acceptance tests: [VERIFY: NETA ATS sections for generators and transfer switches].
+
+| Criterion | Value | Source document and section |
+|---|---|---|
+| ATS: time at each stage (start signal, transfer, retransfer, cool-down) | | |
+| ATS: load-side interruption on transfer | | |
+| STS: transfer time, manual and automatic | | |
+| STS: synchronization window and out-of-sync behavior | | |
+| Load-side disturbance limits | | |
 
 ## 10. Backout procedure
 **Triggers:** transfer does not occur or occurs out of phase; load-side disturbance beyond the specification; overheating; interlock fails; unsafe condition.
@@ -80,6 +107,7 @@ Approved settings, specification, and OEM data. Electrical acceptance tests: [VE
 | If stopped during | Abort steps | End state |
 |---|---|---|
 | Any simulated source condition | Restore the source or remove the test signal; confirm the switch returns to its preferred source | Preferred source, auto |
+| B6 and B8 (simulated fault, control power) | Remove the simulation per the override log; restore control power; confirm with the vendor that the switch is healthy on its preferred source and transfer is not inhibited | Preferred source, auto |
 | Switch stuck between positions or on the wrong source | Stop. Remove the test load. Vendor recovers the switch by the OEM method; do not force it | Switch safe, load off |
 | Bypass tests | Complete or reverse the bypass sequence per the OEM steps so that no bypass is left closed | Bypass open, switch in auto |
 
@@ -90,4 +118,9 @@ Every jumper, test lead, and temporary setting is entered in the override log an
 - [ ] Override log clear; test load removed
 - [ ] Issues logged
 
-Sign-off block as in the template.
+| Role | Name | Signature | Date |
+|---|---|---|---|
+| Cx agent | | | |
+| Electrical contractor | | | |
+| Switch vendor | | | |
+| Owner's witness | | | |
