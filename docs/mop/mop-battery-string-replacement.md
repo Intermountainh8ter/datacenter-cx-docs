@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for a generic UPS with more than one battery string, each with its own disconnect, where one string is replaced while the UPS stays in service. Battery chemistry, cabinet design, and the manufacturer's sequence govern. Replace every step with the OEM procedure before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Isolate one battery string, remove and replace its cells or modules, commission the new string, and return it to service.
@@ -46,7 +57,16 @@ Isolate one battery string, remove and replace its cells or modules, commission 
 Batteries cannot be de-energized. Each cell and each partial string is a live source. Hazards: DC shock, arc flash, short circuit from tools, weight, electrolyte or thermal event depending on chemistry. DC work rules and PPE: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]. No metal jewelry. One connection worked at a time. Insulating covers over exposed terminals.
 
 ## 7. Roles and communications
-Supervisor, battery technicians (two minimum), verifier, safety lead, monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Battery technicians (two minimum) | | |
+| Verifier | | |
+| Safety lead | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -92,3 +112,8 @@ If utility is lost during the work, stop, make connections safe, clear the area,
 - [ ] Old batteries removed from site with disposal records
 - [ ] Battery records updated: install date, date codes, torque sheet
 - [ ] Spare stock and register updated; change ticket closed
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

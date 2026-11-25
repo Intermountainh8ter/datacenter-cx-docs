@@ -10,7 +10,15 @@ license: CC BY 4.0
 > Example SOP. Replace the route, equipment list, and normal ranges with site values from the design basis and commissioning baseline.
 
 ## 1. Document control
-Use the block from the [SOP Template](sop-template.md). Frequency: once per shift, or as the site requires.
+
+| Field | Entry |
+|---|---|
+| SOP ID and revision | |
+| Title | |
+| Owner | |
+| Approver / date | |
+| Review cycle | Every ____ months, and after any related incident or equipment change |
+| Frequency of task | Once per shift, or as the site requires |
 
 ## 2. Purpose and scope
 A walking inspection of critical infrastructure to catch problems that monitoring does not: leaks, noise, smell, heat, damage, and housekeeping. Rounds are look, listen, and record. No switching or adjustment is done under this SOP.

@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP for a generic plant with more than one generator. Replace with the site's load-shed sequence and the generator manufacturer's alarm guide.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 The facility is running on generators and one or more of them fails to start, trips, or shows a shutdown pre-alarm.

@@ -10,7 +10,15 @@ license: CC BY 4.0
 > Example SOP. Risk classes, approvers, and lead times are set by the facility owner.
 
 ## 1. Document control
-Use the block from the [SOP Template](sop-template.md).
+
+| Field | Entry |
+|---|---|
+| SOP ID and revision | |
+| Title | |
+| Owner | |
+| Approver / date | |
+| Review cycle | Every ____ months, and after any related incident or equipment change |
+| Frequency of task | |
 
 ## 2. Purpose and scope
 No one works on or near critical infrastructure without an approved, scheduled, and communicated authorization. Applies to staff, vendors, and construction teams.

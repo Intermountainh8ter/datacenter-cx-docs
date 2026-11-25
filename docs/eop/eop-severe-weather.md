@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP for forecast events such as storms, high winds, flooding, extreme heat or cold, and heavy snow or ice. Adapt the triggers and actions to the site's location and design.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 An official weather warning for the site area, or conditions on site that threaten utilities, access, or equipment.

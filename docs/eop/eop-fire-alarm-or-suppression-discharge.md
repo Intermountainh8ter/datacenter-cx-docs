@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP. The site fire safety plan, the local fire service, and the fire system designer's sequence govern. Life safety comes before equipment and before uptime.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 Fire alarm, pre-discharge alarm, suppression discharge, or sight or smell of smoke in an electrical room, battery room, data hall, or plant room.

@@ -8,7 +8,15 @@ license: CC BY 4.0
 # SOP: Critical Spares Storage and Audit
 
 ## 1. Document control
-Use the block from the [SOP Template](../sop/sop-template.md). Frequency: audit every ____ months; shelf-life check monthly.
+
+| Field | Entry |
+|---|---|
+| SOP ID and revision | |
+| Title | |
+| Owner | |
+| Approver / date | |
+| Review cycle | Every ____ months, and after any related incident or equipment change |
+| Frequency of task | Audit every ____ months; shelf-life check monthly |
 
 ## 2. Purpose and scope
 Confirm that every critical spare in the register is present, correct, in date, and usable.

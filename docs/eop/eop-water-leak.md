@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP. Valve locations and isolation effects are site-specific.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 Leak detection alarm, visible water, or a report of dripping in or above an electrical room, data hall, or plant room.

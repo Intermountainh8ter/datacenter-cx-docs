@@ -10,7 +10,15 @@ license: CC BY 4.0
 > Example SOP for the routine exercise of a standby generator. Frequency, duration, and loading come from the governing requirement and the OEM, not from this document.
 
 ## 1. Document control
-Use the block from the [SOP Template](sop-template.md). Frequency and minimum loading: [VERIFY: NFPA 110 section on routine exercise frequency and loading].
+
+| Field | Entry |
+|---|---|
+| SOP ID and revision | |
+| Title | |
+| Owner | |
+| Approver / date | |
+| Review cycle | Every ____ months, and after any related incident or equipment change |
+| Frequency of task | Frequency and minimum loading: [VERIFY: NFPA 110 section on routine exercise frequency and loading] |
 
 ## 2. Purpose and scope
 Prove the generator starts and runs, keep the engine in condition, and catch defects early. This SOP covers a run that does **not** transfer the critical load. A run that transfers load needs a MOP.

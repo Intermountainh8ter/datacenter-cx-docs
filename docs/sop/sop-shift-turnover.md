@@ -8,7 +8,15 @@ license: CC BY 4.0
 # SOP: Shift Turnover
 
 ## 1. Document control
-Use the block from the [SOP Template](sop-template.md). Frequency: every shift change.
+
+| Field | Entry |
+|---|---|
+| SOP ID and revision | |
+| Title | |
+| Owner | |
+| Approver / date | |
+| Review cycle | Every ____ months, and after any related incident or equipment change |
+| Frequency of task | Every shift change |
 
 ## 2. Purpose and scope
 The incoming shift knows the true state of the facility before the outgoing shift leaves.

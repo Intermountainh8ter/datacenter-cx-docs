@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for updating firmware or control software on equipment such as UPS units, cooling units, power meters, or plant controllers. The vendor's update procedure for the exact model governs.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Update one unit, prove it, then update the remaining units in a controlled order. State the current and target versions and the reason for the update.
@@ -47,7 +58,15 @@ Update one unit, prove it, then update the remaining units in a controlled order
 Electrical and mechanical hazards of the equipment still apply when connecting to service ports. Do not open enclosures beyond what the vendor procedure requires.
 
 ## 7. Roles and communications
-Supervisor, performer (vendor or trained technician), verifier, monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Performer (vendor or trained technician) | | |
+| Verifier | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -88,3 +107,8 @@ Supervisor, performer (vendor or trained technician), verifier, monitoring conta
 - [ ] Asset records updated with the new versions
 - [ ] Spare boards and controllers checked for version compatibility; spares register updated
 - [ ] New configuration backups stored; change ticket closed
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

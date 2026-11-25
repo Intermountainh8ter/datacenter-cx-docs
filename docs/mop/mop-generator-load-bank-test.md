@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for testing one standby generator against a portable or permanent load bank, with the generator isolated from the critical load. Adapt to the site and the OEM instructions before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Prove the generator can carry load for a sustained period and record its performance. The critical load is not transferred in this MOP.
@@ -46,7 +57,16 @@ Prove the generator can carry load for a sustained period and record its perform
 Hazards: rotating parts, hot surfaces, exhaust, noise, electrical connection of temporary cables, fuel. Cable connection and disconnection only with the breaker open, locked, and tested: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]. Hearing protection and barriers around the load bank discharge.
 
 ## 7. Roles and communications
-Supervisor, generator operator, load bank operator, verifier, monitoring contact. A direct voice channel between the generator and the load bank is required.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Generator operator | | |
+| Load bank operator | | |
+| Verifier | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction. A direct voice channel between the generator and the load bank is required.
 
 ## 8. Procedure steps
 
@@ -91,3 +111,8 @@ After a fault-triggered backout, tell operations the remaining standby capacity 
 ## 11. Closeout
 - [ ] Test data sheet attached; results compared with the previous test
 - [ ] Deviations and lessons recorded; change ticket closed
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

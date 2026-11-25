@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for a generic dual-path (A/B) electrical distribution in which every critical load has two feeds. Adapt to the site one-line and the OEM instructions before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 De-energize the A-side switchboard for maintenance while the B side carries the full critical load, then restore.
@@ -44,7 +55,17 @@ De-energize the A-side switchboard for maintenance while the B side carries the 
 Establish an electrically safe work condition on the A-side switchboard before maintenance: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]. Lockout/tagout at every source of supply including backfeeds and control power: [VERIFY: OSHA 1910.147 lockout/tagout section].
 
 ## 7. Roles and communications
-Supervisor, switching performer, verifier, load monitor (watching B-side load and temperatures), safety lead, monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Switching performer | | |
+| Verifier | | |
+| Load monitor (watching B-side load and temperatures) | | |
+| Safety lead | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -87,3 +108,8 @@ If the B side fails while A is restorable, the supervisor may order an expedited
 ## 11. Closeout
 - [ ] Test reports attached; deviations and lessons recorded; change ticket closed
 - [ ] Spares used are reordered
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP for a generic facility with UPS and standby generators that start and transfer automatically. Replace with the site's sequence of operations.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 Utility source alarm, generators starting, UPS on battery, or lights transferring to emergency.

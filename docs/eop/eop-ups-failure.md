@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP for a generic UPS system. Replace with the OEM alarm guide and the site's sequence of operations.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 UPS "on battery" with utility present, UPS "on bypass" not commanded, UPS major alarm, or loss of UPS output.

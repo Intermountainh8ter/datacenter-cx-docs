@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for cleaning stored diesel fuel with a portable or permanent polishing system while the generators stay available. Adapt to the site fuel system and the service vendor's method.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Sample the fuel, circulate it through filtration and water separation, sample again, and return the fuel system to normal. One tank at a time.
@@ -46,7 +57,15 @@ Sample the fuel, circulate it through filtration and water separation, sample ag
 Hazards: flammable liquid, static discharge, spill, slips, vapor in enclosed spaces. Bond and ground the rig before opening the tank. No ignition sources. No tank entry under this MOP.
 
 ## 7. Roles and communications
-Supervisor, fuel vendor technicians, site verifier (owns valve positions), monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Fuel vendor technicians | | |
+| Site verifier (owns valve positions) | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -89,3 +108,8 @@ This MOP has no point of no return. Fuel removed for waste is not returned.
 - [ ] Laboratory results received and compared with requirements; further action raised if they fail
 - [ ] Engine fuel filter spares restocked
 - [ ] Fuel records updated; change ticket closed
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

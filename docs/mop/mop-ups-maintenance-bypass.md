@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for a generic single UPS system with an internal static bypass and an external maintenance bypass. Breaker names, interlocks, and the exact sequence differ by manufacturer and design. Replace every step with the OEM sequence for the installed model before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Place the UPS in maintenance bypass so the UPS can be isolated for service, then return the load to conditioned power. Scope ends at the UPS input, output, and bypass breakers.
@@ -44,7 +55,16 @@ Place the UPS in maintenance bypass so the UPS can be isolated for service, then
 Electrical work per the site electrical safety program. Boundaries and PPE: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]. Lockout/tagout of the isolated UPS: [VERIFY: OSHA 1910.147 lockout/tagout section]. Stored energy: batteries and DC capacitors remain hazardous after isolation; follow the OEM discharge time.
 
 ## 7. Roles and communications
-Supervisor, performer, verifier, vendor technician, monitoring contact. Three-part communication.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Performer | | |
+| Verifier | | |
+| Vendor technician | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -101,3 +121,8 @@ If the bypass source is lost while on bypass, go to the EOP for loss of utility.
 - [ ] Vendor service report attached
 - [ ] Deviations and lessons recorded; change ticket closed
 - [ ] Spares used are reordered
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

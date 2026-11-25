@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for a generic automatic transfer switch (ATS) that has a bypass-isolation feature. If the switch has no bypass, the load must be fed another way or shut down, and this MOP does not apply. Replace every step with the OEM sequence before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Bypass the ATS to its connected source, isolate the transfer mechanism, maintain and test it, and return it to automatic service.
@@ -43,7 +54,17 @@ Bypass the ATS to its connected source, isolate the transfer mechanism, maintain
 Line and load terminals of the bypass remain energized while the transfer mechanism is isolated. Work only on the isolated, withdrawn, or de-energized section, verified dead: [VERIFY: NFPA 70E sections for electrically safe work condition and energized work permit]. Lock and tag per [VERIFY: OSHA 1910.147 lockout/tagout section].
 
 ## 7. Roles and communications
-Supervisor, performer, verifier, standby operator at the bypass handle, vendor technician, monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Performer | | |
+| Verifier | | |
+| Standby operator at the bypass handle | | |
+| Vendor technician | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -86,3 +107,8 @@ Supervisor, performer, verifier, standby operator at the bypass handle, vendor t
 
 ## 11. Closeout
 - [ ] Maintenance report attached; change ticket closed; spares used are reordered
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

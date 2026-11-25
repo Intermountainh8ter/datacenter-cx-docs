@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for one pump in a group with at least one redundant pump. Adapt to the site piping, the controls sequence, and the OEM instructions before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Take one pump out of service, replace the pump or motor, and return it to the automatic rotation.
@@ -44,7 +55,17 @@ Take one pump out of service, replace the pump or motor, and return it to the au
 Hazards: stored pressure, hot or cold water, rotating parts, lifting, electrical. Lock and tag the motor supply and the isolation valves: [VERIFY: OSHA 1910.147 lockout/tagout section]. Relieve pressure before opening flanges.
 
 ## 7. Roles and communications
-Supervisor, mechanical technicians, electrician, verifier, plant monitor, monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Mechanical technicians | | |
+| Electrician | | |
+| Verifier | | |
+| Plant monitor | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -91,3 +112,8 @@ If an isolation valve passes after the PNR, treat it as a leak: stop work, conta
 ## 11. Closeout
 - [ ] Asset records, spares register, and drawings updated for the new pump
 - [ ] Change ticket closed; old pump disposed of or kept as a rebuildable spare
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

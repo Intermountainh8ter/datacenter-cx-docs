@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP. The design decides what continues to run without the monitoring system; confirm it from the sequence of operations and commissioning results.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 Operator screens frozen or blank, widespread communication alarms, loss of alarm notifications, or values that have stopped updating.

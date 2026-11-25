@@ -10,7 +10,18 @@ license: CC BY 4.0
 > Example MOP for one computer room cooling unit in a group with at least one redundant unit. Adapt to the site design, the controls sequence, and the OEM instructions before use.
 
 ## 1. Document control
-Use the block from the [MOP Template](mop-template.md).
+
+| Field | Entry |
+|---|---|
+| MOP ID and revision | |
+| Title | |
+| Author / date | |
+| Technical reviewer / date | |
+| Vendor reviewer / date | |
+| Approver (facility owner) / date | |
+| Change ticket | |
+| Scheduled window (start, end) | |
+| Risk level | Low / Medium / High (see the risk classes in the [Change and Work Authorization SOP](../sop/sop-change-and-work-authorization.md)) |
 
 ## 2. Purpose and scope
 Remove one cooling unit from service, maintain it, and return it, without the room leaving its temperature and humidity limits.
@@ -42,7 +53,16 @@ Remove one cooling unit from service, maintain it, and return it, without the ro
 Hazards: rotating fans, electrical, pressurized water or refrigerant, working over a raised floor. Lockout/tagout of the unit's electrical supply and valves: [VERIFY: OSHA 1910.147 lockout/tagout section].
 
 ## 7. Roles and communications
-Supervisor, technician, verifier, room temperature monitor, monitoring contact.
+
+| Role | Name | Contact |
+|---|---|---|
+| MOP supervisor (stop/go authority) | | |
+| Technician | | |
+| Verifier | | |
+| Room temperature monitor | | |
+| Monitoring contact | | |
+
+Communication method: ____. Use three-part communication for every instruction.
 
 ## 8. Procedure steps
 
@@ -81,3 +101,8 @@ The point of no return is the first disassembly in step 7 that prevents an immed
 ## 11. Closeout
 - [ ] Maintenance record attached; deviations and lessons recorded; change ticket closed
 - [ ] Spares used are reordered
+
+| Sign-off | Name | Date |
+|---|---|---|
+| MOP supervisor | | |
+| Facility owner | | |

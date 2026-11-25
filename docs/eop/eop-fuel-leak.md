@@ -10,7 +10,14 @@ license: CC BY 4.0
 > Example EOP for a diesel fuel system serving standby generators. The site spill plan and local environmental rules govern reporting.
 
 ## 1. Document control
-Use the block from the [EOP Template](eop-template.md).
+
+| Field | Entry |
+|---|---|
+| EOP ID and revision | |
+| Event covered | |
+| Owner / approver / date | |
+| Last drill date | |
+| Posted locations | |
 
 ## 2. Entry conditions
 Fuel leak detection alarm, containment alarm, unexplained tank level drop, fuel smell, or visible fuel.
